@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "AutosEJ.Controllers.AutoController",
+    "Method": "Get",
+    "RelativePath": "api/Auto/lista",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

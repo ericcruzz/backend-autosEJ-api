@@ -1,0 +1,22 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "AutosEJ",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Auto/lista": {
+      "get": {
+        "tags": [
+          "Auto"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}
