@@ -42,8 +42,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 7,
@@ -54,8 +58,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-31T16:12:52.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-31T16:12:52.644Z"
             },
             {
               "$type": "Document",
@@ -80,28 +83,14 @@
               "RelativeToolTip": "Controllers\\AutoController.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAmwBUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T19:25:19.854Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-30T19:25:19.854Z"
             }
           ]
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Marca.cs",
-              "DocumentMoniker": "C:\\workstation\\AutosEJ\\AutosEJ\\Entities\\Marca.cs",
-              "RelativeDocumentMoniker": "Entities\\Marca.cs",
-              "ToolTip": "C:\\workstation\\AutosEJ\\AutosEJ\\Entities\\Marca.cs",
-              "RelativeToolTip": "Entities\\Marca.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T18:42:05.638Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 5,
@@ -112,8 +101,7 @@
               "RelativeToolTip": "Entities\\AutVersion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T18:42:40.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-05T18:42:40.624Z"
             },
             {
               "$type": "Document",
@@ -125,8 +113,7 @@
               "RelativeToolTip": "Entities\\CatColor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T18:42:53.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-05T18:42:53.461Z"
             },
             {
               "$type": "Document",
@@ -136,10 +123,22 @@
               "RelativeDocumentMoniker": "Entities\\Vehiculo.cs",
               "ToolTip": "C:\\workstation\\AutosEJ\\AutosEJ\\Entities\\Vehiculo.cs",
               "RelativeToolTip": "Entities\\Vehiculo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-05T18:42:50.783Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Marca.cs",
+              "DocumentMoniker": "C:\\workstation\\AutosEJ\\AutosEJ\\Entities\\Marca.cs",
+              "RelativeDocumentMoniker": "Entities\\Marca.cs",
+              "ToolTip": "C:\\workstation\\AutosEJ\\AutosEJ\\Entities\\Marca.cs",
+              "RelativeToolTip": "Entities\\Marca.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T18:42:05.638Z"
             },
             {
               "$type": "Document",
@@ -151,8 +150,7 @@
               "RelativeToolTip": "Entities\\Modelo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T18:42:06.843Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-05T18:42:06.843Z"
             }
           ]
         }
