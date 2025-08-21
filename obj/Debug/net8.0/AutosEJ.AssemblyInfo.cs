@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutosEJ")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+459ed41c936dce57fdc10d88ac8d6dcf5c2719de")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f293c71b9329b736ba380e6b4adcbff9912d41e")]
+>>>>>>> master
 [assembly: System.Reflection.AssemblyProductAttribute("AutosEJ")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutosEJ")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

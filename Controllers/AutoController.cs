@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AutosEJ.Context;
+using AutosEJ.Models;
 
 namespace AutosEJ.Controllers
 {
@@ -9,8 +9,8 @@ namespace AutosEJ.Controllers
     [ApiController]
     public class AutoController : ControllerBase
     {
-        private readonly AutosEJDb _db;
-        public AutoController(AutosEJDb db) 
+        private readonly AutosEjContext _db;
+        public AutoController(AutosEjContext db) 
         {
             _db = db;
         }
@@ -19,7 +19,7 @@ namespace AutosEJ.Controllers
         [Route("lista")]
         public async Task<ActionResult> Get()
         {
-            var listaAuto = await _db.Marcas.ToListAsync();
+            var listaAuto = await _db.Vehiculos.ToListAsync();
             return Ok(listaAuto);
         }
     }
