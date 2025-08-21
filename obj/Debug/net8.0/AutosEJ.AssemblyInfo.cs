@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutosEJ")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+219aae430cefa5ae741782ac2ee05ed67ad24466")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f293c71b9329b736ba380e6b4adcbff9912d41e")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutosEJ")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutosEJ")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

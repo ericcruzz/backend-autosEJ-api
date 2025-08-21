@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "Models\\AutosEjContext.cs",
               "ToolTip": "C:\\workstation\\AutosEJ\\AutosEJ\\Models\\AutosEjContext.cs",
               "RelativeToolTip": "Models\\AutosEjContext.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA7wBYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwCcAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-15T07:01:04.011Z",
               "EditorCaption": ""
@@ -67,8 +67,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-31T16:12:52.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-31T16:12:52.644Z"
             },
             {
               "$type": "Document",
