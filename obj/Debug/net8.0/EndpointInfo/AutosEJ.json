@@ -5,18 +5,97 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Auto/lista": {
+    "/api/Auto/listar": {
       "get": {
         "tags": [
           "Auto"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VehiculoDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VehiculoDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VehiculoDTO"
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "VehiculoDTO": {
+        "type": "object",
+        "properties": {
+          "idVehiculo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serie": {
+            "type": "string",
+            "nullable": true
+          },
+          "niv": {
+            "type": "string",
+            "nullable": true
+          },
+          "placa": {
+            "type": "string",
+            "nullable": true
+          },
+          "motor": {
+            "type": "string",
+            "nullable": true
+          },
+          "marca": {
+            "type": "string",
+            "nullable": true
+          },
+          "modelo": {
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "type": "string",
+            "nullable": true
+          },
+          "anio": {
+            "type": "string",
+            "nullable": true
+          },
+          "colorExterior": {
+            "type": "string",
+            "nullable": true
+          },
+          "colorInterior": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
 }

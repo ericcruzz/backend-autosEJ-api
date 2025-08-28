@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using AutosEJ.Models;
+using AutosEJ.Context;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
