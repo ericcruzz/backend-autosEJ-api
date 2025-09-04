@@ -8,7 +8,7 @@ using AutosEJ.Models.DTO;
 
 namespace AutosEJ.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Vehiculo")]
     [ApiController]
     public class AutoController : ControllerBase
     {
@@ -28,12 +28,11 @@ namespace AutosEJ.Controllers
             return _vehiculoDAO.AllSelects();
         }
 
-        //[HttpGet]
-        //[Route("BuscarPorId/{id}")]
-        //public async Task<ActionResult> Get(int id)
-        //{
-        //    var auto = await _db.Vehiculos.ToListAsync();
-        //    return Ok(auto);
-        //}
+        [HttpGet]
+        [Route("BuscarPorId/{id}")]
+        public VehiculoDTO VehiculoById(int id)
+        {
+            return _vehiculoDAO.VehiculoById(id);
+        }
     }
 }
