@@ -1,0 +1,13 @@
+# Build Files
+bin/
+obj/
+
+# VS User Settings
+.vs/
+
+# Temp Files
+*.tmp
+*.log
+
+# Environment Variables
+.env
