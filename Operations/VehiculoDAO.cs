@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace AutosEJ.Operations
 {
@@ -17,7 +18,7 @@ namespace AutosEJ.Operations
             _context = context;
         }
 
-        public List<VehiculoDTO> AllSelects()
+        public List<VehiculoDTO> GetList()
         {
             try
             {
@@ -42,7 +43,9 @@ namespace AutosEJ.Operations
                                 ColorInterior = colorInt.Descripcion ?? ""
                             };
 
-                return query.ToList();
+                List<VehiculoDTO> vehiculoList = query.ToList();
+
+                return vehiculoList;
             }
             catch 
             {
@@ -51,58 +54,27 @@ namespace AutosEJ.Operations
             
         }
 
-        public VehiculoDTO VehiculoById(int id)
+        public VehiculoDTO GetById(int id)
         {
             try
             {
-                //var vehiculo = _context.Vehiculos.Where(vehiculo => vehiculo.IdVehiculo == id).FirstOrDefault();
+                var vehiculo = _context.Vehiculos.Find(id);
 
-                //if (vehiculo == null)
-                //{
-                //    return new VehiculoDTO();
-                //}
-
-                //var version = _context.AutVersions.Where(version => version.IdAutVersion == vehiculo.IdAutVersion).FirstOrDefault();
-                //var modelo = _context.Modelos.Where(modelo => modelo.IdModelo == version.IdModelo).FirstOrDefault();
-                //var marca = _context.Marcas.Where(marca => marca.IdMarca == modelo.IdMarca).FirstOrDefault();
-                //string colorExterior = CatColorDAO.GetColorNameById(_context, vehiculo?.IdColorExterior ?? 0);
-                //string colorInterior = CatColorDAO.GetColorNameById(_context, vehiculo?.IdColorInterior ?? 0);
-
-                //VehiculoDTO vehiculoDto = TransferDataFromVehiculoToVehiculoDTO(vehiculo, version, marca, modelo, colorExterior, colorInterior);
-
-                //return vehiculoDto;
-
-                var query = from veh in _context.Vehiculos
-                            join version in _context.AutVersions on veh.IdAutVersion equals version.IdAutVersion
-                            join modelo in _context.Modelos on version.IdModelo equals modelo.IdModelo
-                            join marca in _context.Marcas on modelo.IdMarca equals marca.IdMarca
-                            join colorExt in _context.CatColors on veh.IdColorExterior equals colorExt.IdColor
-                            join colorInt in _context.CatColors on veh.IdColorInterior equals colorInt.IdColor
-                            where veh.IdVehiculo == id
-                            select new VehiculoDTO
-                            {
-                                IdVehiculo = veh.IdVehiculo,
-                                Serie = veh.Serie,
-                                Niv = veh.Niv,
-                                Placa = veh.Placa,
-                                Motor = veh.Motor,
-                                Version = version.Nombre + " " + version.Descripcion ?? "",
-                                Marca = marca.Nombre ?? "",
-                                Modelo = modelo.Nombre ?? "",
-                                Anio = version.Anio ?? "",
-                                ColorExterior = colorExt.Descripcion ?? "",
-                                ColorInterior = colorInt.Descripcion ?? ""
-                            };
-
-
-                VehiculoDTO vehiculo = new VehiculoDTO();
-
-                if (query != null)
+                if (vehiculo == null)
                 {
-                    vehiculo = query.First();
+                    return new VehiculoDTO();
                 }
 
-                return vehiculo;
+                var version = _context.AutVersions.Find(vehiculo.IdAutVersion);
+                var modelo = _context.Modelos.Find(version?.IdModelo);
+                var marca = _context.Marcas.Find(modelo?.IdMarca);
+                string colorExterior = CatColorDAO.GetColorNameById(_context, vehiculo?.IdColorExterior ?? 0);
+                string colorInterior = CatColorDAO.GetColorNameById(_context, vehiculo?.IdColorInterior ?? 0);
+
+                VehiculoDTO vehiculoDto =  TransferDataFromVehiculoToVehiculoDTO(vehiculo, version, marca, modelo, colorExterior, colorInterior);
+
+                return vehiculoDto;
+
             }
             catch
             {

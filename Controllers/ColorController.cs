@@ -23,7 +23,7 @@ namespace AutosEJ.Controllers
         [Route("listar")]
         public List<CatColorDTO> AllColors()
         {
-            return _catColorDAO.AllSelects();
+            return _catColorDAO.GetList();
         }
 
         [HttpGet]
