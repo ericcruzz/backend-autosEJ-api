@@ -1,54 +1,39 @@
 ﻿using AutosEJ.Context;
 using AutosEJ.Models.DTO;
+using AutosEJ.Models.Interfaces;
+using AutosEJ.Models.Repository;
 using System.Collections;
 
 namespace AutosEJ.Operations
 {
-    public class MarcaDAO : DBObject
+    public class MarcaDAO : RepositorioBase
     {
-        //private readonly AutosEjContext _context;
+        public MarcaDAO(AutosEjContext context) : base(context) { }
 
-        public MarcaDAO(AutosEjContext context) : base(context) 
+        public override List<MarcaDTO> ObtenerLista()
         {
-            //_context = context;
+            List<MarcaDTO> listaMarcas = _context.Marcas.Select(marca => new MarcaDTO()
+                                                        {
+                                                            Id = marca.IdMarca,
+                                                            Nombre = marca.Nombre ?? ""
+                                                        }).ToList();
+
+            return listaMarcas;            
         }
 
-        public override ICollection GetList()
+        public override MarcaDTO BuscarPorId(int id)
         {
-            try
-            {
-                var brands = context.Marcas.Select(marca => new MarcaDTO()
-                {
-                    IdMarca = marca.IdMarca,
-                    Nombre = marca.Nombre
-                }).ToList();
+            var objetoBuscado = _context.Marcas.Where(m => m.IdMarca == id)
+                                                .Select(s => new MarcaDTO()
+                                                {
+                                                    Id = s.IdMarca,
+                                                    Nombre = s.Nombre ?? ""
+                                                }).SingleOrDefault();
 
-                return brands;
-            }
-            catch (Exception ex) 
-            {
-                return null;
-            }
-            
-        }
+            MarcaDTO marca = objetoBuscado != null ? objetoBuscado : new MarcaDTO();
 
-        public MarcaDTO GetById(int id)
-        {
-            try
-            {
-                var brand = context.Marcas.Where(m => m.IdMarca == id)
-                                      .Select(s => new MarcaDTO()
-                                      {
-                                          IdMarca = s.IdMarca,
-                                          Nombre = s.Nombre
-                                      }).FirstOrDefault();
+            return marca;
 
-                return brand;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
         }
 
         public static string GetBrandNameById(AutosEjContext context, int id)
@@ -69,9 +54,5 @@ namespace AutosEJ.Operations
             }
         }
 
-        //public override List<object> GetList()
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

@@ -12,17 +12,30 @@ namespace AutosEJ.Operations
             _context = context;
         }
 
-        public List<AutVersionDTO> ObtenerLista()
-        {
-            try
-            {
-                List<AutVersionDTO> listaAutVersiones = _context.AutVersions.Select( )
+        //public List<AutVersionDTO> ObtenerLista()
+        //{
+        //    try
+        //    {
+        //        var query = _context.AutVersions.ToList();
 
-            }
-            catch (Exception ex)
-            {
-                return new List<AutVersionDTO> ();
-            }
-        }
+        //        List<AutVersionDTO> lista = new List<AutVersionDTO>();
+
+        //        foreach (var item in query) 
+        //        { 
+        //            AutVersionDTO version = new AutVersionDTO();
+        //            version.IdAutVersion = item.IdAutVersion;
+        //            version.Nombre = item.Nombre;
+        //            version.Descripcion = item.Descripcion;
+        //            version.Anio = item.Anio;
+        //            version.Modelo = 
+        //            lista.Add(version);
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new List<AutVersionDTO> ();
+        //    }
+        //}
     }
 }

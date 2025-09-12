@@ -1,54 +1,52 @@
 ﻿using AutosEJ.Context;
 using AutosEJ.Models.DTO;
+using AutosEJ.Models.Repository;
 
 namespace AutosEJ.Operations
 {
-    public class CatColorDAO
+    public class CatColorDAO : RepositorioBase
     {
 
-        private readonly AutosEjContext _context;
+        public CatColorDAO(AutosEjContext context) : base(context) {  }
 
-        public CatColorDAO(AutosEjContext context) 
-        { 
-            _context = context;
-        }
-
-        public List<CatColorDTO> GetList()
+        public override List<CatColorDTO> ObtenerLista()
         {
             try
             {
                 var listColors = _context.CatColors.Select(s => new CatColorDTO()
                 {
-                    IdColor = s.IdColor,
+                    Id = s.IdColor,
                     Descripcion = s.Descripcion ?? "",
                     Tipo = s.Tipo ?? ""
                 }).ToList();
 
                 return listColors;
             }
-            catch (Exception ex) 
+            catch  
             {
-                return null;
+                return new List<CatColorDTO>();
             }
         }
 
-        public CatColorDTO GetById(int id) 
+        public override CatColorDTO BuscarPorId(int id) 
         {
             try
             {
-                var color = _context.CatColors.Where(c => c.IdColor == id)
+                var colorBuscado = _context.CatColors.Where(c => c.IdColor == id)
                                           .Select(s => new CatColorDTO()
                                           {
-                                              IdColor = s.IdColor,
+                                              Id = s.IdColor,
                                               Descripcion = s.Descripcion ?? "",
                                               Tipo = s.Tipo ?? ""
                                           }).FirstOrDefault();
 
-                return color ?? new CatColorDTO();
+                CatColorDTO color = colorBuscado != null ? colorBuscado : new CatColorDTO();
+
+                return color;
             }
-            catch (Exception ex)
+            catch 
             {
-                return null;
+                return new CatColorDTO();
             }
             
         }

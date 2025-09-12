@@ -1,8 +1,10 @@
-﻿namespace AutosEJ.Models.DTO
+﻿using AutosEJ.Models.Interfaces;
+
+namespace AutosEJ.Models.DTO
 {
-    public class CatColorDTO
+    public class CatColorDTO : IDataTransferObject
     {
-        public int IdColor { get; set; } 
+        public int Id { get; set; } 
 
         public string Descripcion { get; set; } = string.Empty;
 

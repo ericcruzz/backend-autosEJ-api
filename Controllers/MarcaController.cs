@@ -1,5 +1,4 @@
 ﻿using AutosEJ.Context;
-using AutosEJ.Models.DTO;
 using AutosEJ.Operations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,33 +7,33 @@ namespace AutosEJ.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ColorController : ControllerBase
+    public class MarcaController : ControllerBase
     {
         private readonly AutosEjContext _db;
-        private CatColorDAO _catColorDAO;
+        private MarcaDAO _marcaDAO;
 
-        public ColorController(AutosEjContext db) 
-        { 
+        public MarcaController(AutosEjContext db)
+        {
             _db = db;
-            _catColorDAO = new CatColorDAO(_db);
+            _marcaDAO = new MarcaDAO(_db);
         }
 
         [HttpGet]
         [Route("ObtenerLista")]
         public ActionResult ObtenerLista()
         {
-            var listaColores = _catColorDAO.ObtenerLista();
+            var listaMarcas = _marcaDAO.ObtenerLista();
 
-            return Ok(listaColores);
+            return Ok(listaMarcas);
         }
 
         [HttpGet]
         [Route("BuscarPorId/{id}")]
         public ActionResult BuscarPorId(int id) 
         {
-            var color = _catColorDAO.BuscarPorId(id);
+            var marca = _marcaDAO.BuscarPorId(id);
 
-            return Ok(color);
+            return Ok(marca);
         }
     }
 }
