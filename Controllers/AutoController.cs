@@ -1,26 +1,42 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using AutosEJ.Operations;
 using AutosEJ.Models;
+using AutosEJ.Context;
+using AutosEJ.Models.DTO;
 
 namespace AutosEJ.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Vehiculo")]
     [ApiController]
     public class AutoController : ControllerBase
     {
         private readonly AutosEjContext _db;
+
+        private VehiculoDAO _vehiculoDAO;
         public AutoController(AutosEjContext db) 
         {
             _db = db;
+            _vehiculoDAO = new VehiculoDAO(_db);
         }
 
         [HttpGet]
-        [Route("lista")]
-        public async Task<ActionResult> Get()
+        [Route("ObtenerLista")]
+        public ActionResult ObtenerLista()
         {
-            var listaAuto = await _db.Vehiculos.ToListAsync();
-            return Ok(listaAuto);
+            var vehiculoList = _vehiculoDAO.ObtenerLista();
+
+            return Ok(vehiculoList);
+        }
+
+        [HttpGet]
+        [Route("BuscarPorId/{id}")]
+        public ActionResult BuscarPorId(int id)
+        {
+            var vehiculo = _vehiculoDAO.BuscarPorId(id);
+
+            return Ok(vehiculo);
         }
     }
 }

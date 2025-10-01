@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using AutosEJ.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace AutosEJ.Models;
+namespace AutosEJ.Context;
 
 public partial class AutosEjContext : DbContext
 {
