@@ -22,19 +22,19 @@ namespace AutosEJ.Controllers
         }
 
         [HttpGet]
-        [Route("listar")]
-        public ActionResult AllVehiculos()
+        [Route("ObtenerLista")]
+        public ActionResult ObtenerLista()
         {
-            var vehiculoList = _vehiculoDAO.GetList();
+            var vehiculoList = _vehiculoDAO.ObtenerLista();
 
             return Ok(vehiculoList);
         }
 
         [HttpGet]
         [Route("BuscarPorId/{id}")]
-        public ActionResult VehiculoById(int id)
+        public ActionResult BuscarPorId(int id)
         {
-            var vehiculo = _vehiculoDAO.GetById(id);
+            var vehiculo = _vehiculoDAO.BuscarPorId(id);
 
             return Ok(vehiculo);
         }

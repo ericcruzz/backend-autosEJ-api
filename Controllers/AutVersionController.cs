@@ -8,33 +8,33 @@ namespace AutosEJ.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ModeloController : ControllerBase
+    public class AutVersionController : ControllerBase
     {
         private readonly AutosEjContext _db;
-        private RepositorioBase _modeloDAO;
+        private RepositorioBase _autVersionDAO;
 
-        public ModeloController(AutosEjContext db)
+        public AutVersionController(AutosEjContext db)
         {
             _db = db;
-            _modeloDAO = new ModeloDAO(_db);
+            _autVersionDAO = new AutVersionDAO(db);
         }
 
         [HttpGet]
         [Route("ObtenerLista")]
         public ActionResult ObtenerLista()
         {
-            var listaModelos = _modeloDAO.ObtenerLista();
+            var listaVersiones = _autVersionDAO.ObtenerLista();
 
-            return Ok(listaModelos);
+            return Ok(listaVersiones);
         }
 
         [HttpGet]
         [Route("BuscarPorId/{id}")]
         public ActionResult BuscarPorId(int id) 
         {
-            var modelo = _modeloDAO.BuscarPorId(id);
+            var version = _autVersionDAO.BuscarPorId(id);
 
-            return Ok(modelo);
+            return Ok(version);
         }
     }
 }

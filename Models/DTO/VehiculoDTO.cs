@@ -1,8 +1,10 @@
-﻿namespace AutosEJ.Models.DTO
+﻿using AutosEJ.Models.Interfaces;
+
+namespace AutosEJ.Models.DTO
 {
-    public class VehiculoDTO
+    public class VehiculoDTO : IDataTransferObject
     {
-        public int IdVehiculo { get; set; }
+        public int Id { get; set; }
 
         public string? Serie { get; set; }
 

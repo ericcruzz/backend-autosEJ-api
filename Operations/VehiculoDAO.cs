@@ -1,6 +1,7 @@
 ﻿using AutosEJ.Context;
 using AutosEJ.Models;
 using AutosEJ.Models.DTO;
+using AutosEJ.Models.Repository;
 using System;
 using System.Linq;
 using System.Numerics;
@@ -9,16 +10,11 @@ using System.Threading.Tasks;
 
 namespace AutosEJ.Operations
 {
-    public class VehiculoDAO
+    public class VehiculoDAO : RepositorioBase
     {
-        private readonly AutosEjContext _context;
+        public VehiculoDAO(AutosEjContext context) : base(context) { }
 
-        public VehiculoDAO(AutosEjContext context) 
-        { 
-            _context = context;
-        }
-
-        public List<VehiculoDTO> GetList()
+        public override List<VehiculoDTO> ObtenerLista()
         {
             try
             {
@@ -30,7 +26,7 @@ namespace AutosEJ.Operations
                             join colorInt in _context.CatColors on veh.IdColorInterior equals colorInt.IdColor
                             select new VehiculoDTO
                             {
-                                IdVehiculo = veh.IdVehiculo,
+                                Id = veh.IdVehiculo,
                                 Serie = veh.Serie,
                                 Niv = veh.Niv,
                                 Placa = veh.Placa,
@@ -54,7 +50,7 @@ namespace AutosEJ.Operations
             
         }
 
-        public VehiculoDTO GetById(int id)
+        public override VehiculoDTO BuscarPorId(int id)
         {
             try
             {
@@ -88,7 +84,7 @@ namespace AutosEJ.Operations
         {
             VehiculoDTO vehiculoDto = new VehiculoDTO();
 
-            vehiculoDto.IdVehiculo = vehiculo.IdVehiculo;
+            vehiculoDto.Id = vehiculo.IdVehiculo;
             vehiculoDto.Serie = vehiculo.Serie;
             vehiculoDto.Niv = vehiculo.Niv;
             vehiculoDto.Placa = vehiculo.Placa;
