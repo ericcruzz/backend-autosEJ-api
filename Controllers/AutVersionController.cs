@@ -29,7 +29,7 @@ namespace AutosEJ.Controllers
         }
 
         [HttpGet]
-        [Route("BuscarPorId/{id}")]
+        [Route("BuscarPorId")]
         public ActionResult BuscarPorId(int id) 
         {
             var version = _autVersionDAO.BuscarPorId(id);

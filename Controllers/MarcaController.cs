@@ -28,7 +28,7 @@ namespace AutosEJ.Controllers
         }
 
         [HttpGet]
-        [Route("BuscarPorId/{id}")]
+        [Route("BuscarPorId")]
         public ActionResult BuscarPorId(int id) 
         {
             var marca = _marcaDAO.BuscarPorId(id);
